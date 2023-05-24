@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * **strtow - splits a string into words. delimiters are ignored
- * @str: input string
- * @d: delimeter string
+ * **strtow - splits a string into words. Repeat delimiters are ignored
+ * @str: the iput string
+ * @d: the delimeter string
  * Return: a pointer to an array of strings, or NULL on failure
  */
 
@@ -13,13 +13,15 @@ char **strtow(char *str, char *d)
 	char **s;
 
 	if (str == NULL || str[0] == 0)
+		char **s;
+
+	if (str == NULL || str[0] == 0)
 		return (NULL);
 	if (!d)
 		d = " ";
 	for (i = 0; str[i] != '\0'; i++)
 		if (!is_delim(str[i], d) && (is_delim(str[i + 1], d) || !str[i + 1]))
 			numwords++;
-
 	if (numwords == 0)
 		return (NULL);
 	s = malloc((1 + numwords) * sizeof(char *));
@@ -50,8 +52,8 @@ char **strtow(char *str, char *d)
 
 /**
  * **strtow2 - splits a string into words
- * @str: input string
- * @d: delimeter
+ * @str: the input string
+ * @d: the delimiter
  * Return: a pointer to an array of strings, or NULL on failure
  */
 char **strtow2(char *str, char d)
@@ -62,8 +64,8 @@ char **strtow2(char *str, char d)
 	if (str == NULL || str[0] == 0)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
-		if ((str[i] != d && str[i + 1] == d) ||
-				(str[i] != d && !str[i + 1]) || str[i + 1] == d)
+		if ((str[i] != d && str[i  1] == d) ||
+		    (str[i] != d && !str[i + 1]) || str[i + 1] == d)
 			numwords++;
 	if (numwords == 0)
 		return (NULL);
