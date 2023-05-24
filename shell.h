@@ -75,7 +75,7 @@ typedef struct liststr
 typedef struct passinfo
 {
 	char *fname;
-        list_t *env;
+	list_t *env;
 	list_t *history;
 	list_t *alias;
 	char **environ;
@@ -88,7 +88,7 @@ typedef struct passinfo
 	unsigned int line_count;
 	int err_num;
 	int linecount_flag;
-	
+
 	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory management */
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
@@ -146,7 +146,7 @@ void _puts(char *);
 int _putchar(char);
 
 /* toem_exits.c */
-char *_strncpy(char *, char * int);
+char *_strncpy(char *, char *, int);
 char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
 
