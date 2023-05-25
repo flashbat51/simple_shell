@@ -9,6 +9,7 @@
 ssize_t read_buf(data_t *data, char *buf, size_t *a)
 {
 	ssize_t b = 0;
+
 	if (*a)
 		return (0);
 	b = read(data->readfd, buf, READ_BUF_SIZE);
@@ -66,7 +67,8 @@ int _getline(data_t *data, char **p, size_t *len)
 	*p = d;
 	return (b);
 }
-/* input_buf - For chaineed commands
+/**
+ * input_buf - For chaineed commands
  * @data: struct arg
  * @buff: buffer
  * @length: length of variable
@@ -116,7 +118,7 @@ ssize_t get_input(data_t *data)
 	static char *buff;
 	ssize_t ar = 0;
 	char **buff_p = &(data->arg), *p;
-	
+
 	_putchar(BUF_FLUSH);
 	ar = input_buf(data, &buff, &len);
 	if (ar == -1)

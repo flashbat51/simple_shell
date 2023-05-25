@@ -7,7 +7,7 @@
 int print_alias(chain_t *node)
 {
 	char *a = NULL, *b = NULL;
-	
+
 	if (node)
 	{
 		a = _strchr(node->str, '=');

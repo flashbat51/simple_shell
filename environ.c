@@ -45,7 +45,7 @@ int envList(data_t *data)
 	return (0);
 }
 /**
- * unsetEnv - deletes env variable
+ * _unsetenv - deletes env variable
  * @data: struct arg
  * Return: 0
  */
